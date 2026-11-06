@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">&#x7545;&#x542C;</string>
+    <string name="open_and_listen">&#x6253;&#x5F00;&#x5373;&#x542C;</string>
+    <string name="server_address">&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;</string>
+    <string name="username">&#x7528;&#x6237;&#x540D;</string>
+    <string name="password">&#x5BC6;&#x7801;</string>
+    <string name="save_and_connect">&#x4FDD;&#x5B58;</string>
+    <string name="load_songs">&#x5237;&#x65B0;&#x6B4C;&#x66F2;</string>
+    <string name="connection_empty">&#x8BF7;&#x5148;&#x586B;&#x5199;&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;&#x3002;</string>
+    <string name="connection_success">&#x8FDE;&#x63A5;&#x6210;&#x529F;&#xFF0C;&#x5DF2;&#x83B7;&#x53D6;&#x6B4C;&#x66F2;&#x5217;&#x8868;&#x3002;</string>
+    <string name="connection_failed">&#x8FDE;&#x63A5;&#x5931;&#x8D25;&#xFF0C;&#x8BF7;&#x68C0;&#x67E5;&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;&#x3002;</string>
+    <string name="song_list">&#x6B4C;&#x66F2;&#x5217;&#x8868;</string>
+    <string name="settings">&#x8BBE;&#x7F6E;</string>
+    <string name="play">&#x64AD;&#x653E;</string>
+    <string name="no_songs">&#x6682;&#x65E0;&#x6B4C;&#x66F2;&#xFF0C;&#x8BF7;&#x5148;&#x5728;&#x540E;&#x53F0;&#x5BFC;&#x5165;&#x97F3;&#x4E50;&#x3002;</string>
+    <string name="hint_server">&#x4F8B;&#x5982;&#xFF1A;http://202.189.51.227:8000</string>
+    <string name="refresh_success">&#x5DF2;&#x5237;&#x65B0;&#x6B4C;&#x66F2;&#x5217;&#x8868;&#x3002;</string>
+    <string name="refresh_failed">&#x5237;&#x65B0;&#x5931;&#x8D25;&#xFF0C;&#x8BF7;&#x68C0;&#x67E5;&#x8FDE;&#x63A5;&#x8BBE;&#x7F6E;&#x3002;</string>
+    <string name="unknown_song">&#x672A;&#x77E5;&#x6B4C;&#x66F2;</string>
+    <string name="unknown_artist">&#x672A;&#x77E5;&#x6B4C;&#x624B;</string>
+    <string name="unknown_album">&#x672A;&#x77E5;&#x4E13;&#x8F91;</string>
+</resources>

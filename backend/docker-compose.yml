@@ -1,0 +1,78 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: music-hub-postgres
+    environment:
+      POSTGRES_DB: music_hub
+      POSTGRES_USER: music_hub
+      POSTGRES_PASSWORD: music_hub
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: music-hub-redis
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - ./data/redis:/data
+    restart: unless-stopped
+
+  music-hub-backend:
+    build: .
+    container_name: music-hub-backend
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgresql+psycopg2://music_hub:music_hub@postgres:5432/music_hub
+      REDIS_URL: redis://redis:6379/0
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      - postgres
+      - redis
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:1.27-alpine
+    container_name: music-hub-nginx
+    volumes:
+      - ./deploy/nginx/docker-music-hub.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./data/music:/music:ro
+    ports:
+      - "80:80"
+    depends_on:
+      - music-hub-backend
+    restart: unless-stopped
+
+  music-hub-worker:
+    build: .
+    container_name: music-hub-worker
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgresql+psycopg2://music_hub:music_hub@postgres:5432/music_hub
+      REDIS_URL: redis://redis:6379/0
+    command: ["python", "-m", "app.worker"]
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      - postgres
+      - redis
+    restart: unless-stopped
+
+  navidrome:
+    image: deluan/navidrome:latest
+    container_name: music-hub-navidrome
+    ports:
+      - "4533:4533"
+    environment:
+      ND_SCANSCHEDULE: 1h
+      ND_LOGLEVEL: info
+      ND_SESSIONTIMEOUT: 24h
+    volumes:
+      - ./data/navidrome:/data
+      - ./data/music:/music:ro
+    restart: unless-stopped

@@ -1,0 +1,39 @@
+# ===== Secrets / env files =====
+.env
+.env.*
+!.env.example
+ai_generator/.env
+
+# ===== Backup files =====
+*.bak*
+*.bak_*
+backend/backups/
+backend/_remote_backup/
+
+# ===== Python =====
+backend/.venv/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# ===== Runtime data =====
+backend/data/
+*.db
+*.db-*
+
+# ===== Android / build =====
+android/.gradle/
+android/build/
+android/app/build/
+build/
+*.apk
+*.aab
+local.properties
+*.iml
+.idea/
+
+# ===== Misc =====
+*.log
+.DS_Store
+Thumbs.db

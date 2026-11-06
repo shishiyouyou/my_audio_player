@@ -1,0 +1,18 @@
+directory: ./data/music
+library: ./data/beets/library.db
+import:
+  copy: yes
+  move: no
+  write: yes
+  timid: yes
+  languages: zh en
+paths:
+  default: $albumartist/$album%aunique{}/$track $title
+  singleton: $artist/单曲/$title
+plugins: fetchart embedart lastgenre
+fetchart:
+  auto: yes
+embedart:
+  auto: yes
+lastgenre:
+  auto: yes

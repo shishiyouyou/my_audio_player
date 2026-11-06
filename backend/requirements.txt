@@ -1,0 +1,14 @@
+fastapi==0.116.1
+uvicorn[standard]==0.35.0
+httpx==0.28.1
+APScheduler==3.10.4
+pydantic-settings==2.10.1
+SQLAlchemy==2.0.43
+redis==5.2.1
+psycopg2-binary==2.9.9
+mutagen==1.47.0
+python-dotenv==1.1.1
+beets==2.2.0
+python-multipart==0.0.20
+musicdl==2.13.6
+typing_extensions==4.12.2
